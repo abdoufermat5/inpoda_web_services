@@ -44,10 +44,10 @@ if __name__ == '__main__':
     from wsgiref.simple_server import make_server
 
     wsgi_app2 = WsgiApplication(application2)
-    server2 = make_server('127.0.0.1', 5001, wsgi_app2)
+    server2 = make_server('127.0.0.1', 8001, wsgi_app2)
 
     TableModel.Attributes.sqla_metadata.create_all()
-    logging.info("listening app2 to http://127.0.0.1:5001")
-    logging.info("wsdl app2 is at: http://localhost:5001/?wsdl")
+    logging.info("listening app2 to http://127.0.0.1:8001")
+    logging.info("wsdl app2 is at: http://localhost:8001/?wsdl")
 
     server2.serve_forever()

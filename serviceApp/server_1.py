@@ -1,8 +1,13 @@
 import logging
 
 from spyne import Application
+from spyne.protocol.http import HttpRpc
+from spyne.protocol.json import JsonDocument
 from spyne.protocol.soap import Soap11
+from spyne.server.twisted import TwistedWebResource
 from spyne.server.wsgi import WsgiApplication
+from twisted.internet import reactor
+from twisted.web.server import Site
 
 from db.dbInstance import TableModel
 from model.User import User
@@ -43,10 +48,10 @@ if __name__ == '__main__':
     from wsgiref.simple_server import make_server
 
     wsgi_app1 = WsgiApplication(application1)
-    server1 = make_server('127.0.0.1', 5000, wsgi_app1)
+    server1 = make_server('0.0.0.0', 8000, wsgi_app1)
 
     TableModel.Attributes.sqla_metadata.create_all()
-    logging.info("listening app1 to http://127.0.0.1:5000")
-    logging.info("wsdl app1 is at: http://localhost:5000/?wsdl")
+    logging.info("listening app1 to http://0.0.0.0:8000")
+    logging.info("wsdl app1 is at: http://0.0.0.0:8000/?wsdl")
 
     server1.serve_forever()
