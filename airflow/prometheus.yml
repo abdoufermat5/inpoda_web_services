@@ -1,0 +1,12 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'airflow'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['airflow-webserver:8080',
+                  'airflow-exporter:9108',
+                  'localhost:8000',
+                  'localhost:9108',
+                  'localhost:8080']

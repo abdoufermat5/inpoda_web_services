@@ -8,8 +8,14 @@ logging.basicConfig(level=logging.DEBUG)
 logging.getLogger('spyne.protocol.xml').setLevel(logging.DEBUG)
 logging.getLogger('sqlalchemy.engine.base.Engine').setLevel(logging.DEBUG)
 
+dbname = 'postgres'
+user = 'abdoufermat@inpodadb'
+host = 'inpodadb.postgres.database.azure.com'
+password = 'Fanta1976'
+port = '5432'
+sslmode = 'true'
 
-db = create_engine('sqlite:///inPoda.db')
+db = create_engine("postgresql://{}:{}@{}:{}/{}".format(user, password, host, port, dbname))
 Session = sessionmaker(bind=db)
 TableModel = TTableModel()
 TableModel.Attributes.sqla_metadata.bind = db
