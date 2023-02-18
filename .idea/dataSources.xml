@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="inPoda" uuid="9eaf45f1-66eb-49bf-ab32-6304d9f3b399">
+    <data-source source="LOCAL" name="inPoda" uuid="4921fb42-c91d-4c55-9c57-13f885f269e1">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:D:\M2 -- DATASCALE\ARCHI ORIENTÉ SERVICES\PROJECTS\InPoDa\pythonProject\serviceApp\inPoda.db</jdbc-url>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/serviceApp/inPoda.db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
       <libraries>
         <library>
           <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.39.2/sqlite-jdbc-3.39.2.jar</url>
         </library>
       </libraries>
+    </data-source>
+    <data-source source="LOCAL" name="inpodaAzureDB" uuid="12e1ad0d-2db6-4b81-8fc4-c0d3efbe3616">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://inpodadb.postgres.database.azure.com:5432/postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
 </project>

@@ -18,6 +18,15 @@ from service.preprocessing.serviceAuthorIdentification import ServiceAuthorIdent
 from service.preprocessing.serviceExtractionHashtag import ServiceExtractionHashtag
 from service.preprocessing.serviceSentimentAnalysis import ServiceSentimentAnalysis
 from service.preprocessing.serviceTopicIdentification import ServiceTopicIdentification
+from service.analysis.serviceHashTagPublish import ServiceHashTagPublish
+from service.analysis.serviceTopKHashtag import ServiceTopKHashTag
+from service.analysis.serviceTopKTopics import ServiceTopKTopic
+from service.analysis.serviceTopKUser import ServiceTopKUser
+from service.analysis.serviceTopicPublish import ServiceTopicPublish
+from service.analysis.serviceUserPublish import ServiceUserPublish
+from service.analysis.servicePositiveSentiment import ServicePositiveSentiment
+from service.analysis.serviceNegativeSentiment import ServiceNegativeSentiment
+from service.analysis.serviceNeutralSentiment import ServiceNeutralSentiment
 from utils.utils import _on_method_call, _on_method_return_object, _on_method_context_closed, UserDefinedContext
 
 user_service = UserCrudService(User, 'user')
@@ -31,6 +40,15 @@ application1 = Application(
         ServiceExtractionHashtag,
         ServiceSentimentAnalysis,
         ServiceTopicIdentification,
+        ServiceTopKUser,
+        ServiceTopKTopic,
+        ServiceTopKHashTag,
+        ServiceHashTagPublish,
+        ServiceUserPublish,
+        ServiceTopicPublish,
+        ServicePositiveSentiment,
+        ServiceNegativeSentiment,
+        ServiceNeutralSentiment
     ],
     tns='preprocessing.inpoda.services',
     in_protocol=Soap11(validator='lxml'),
