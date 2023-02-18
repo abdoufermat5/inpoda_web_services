@@ -1,6 +1,6 @@
-from clientApp.analysis.analysisClient import AnalysisApp
-from clientApp.preprocess.preprocessClient import PreprocessApp
-from clientApp.utils.utils import main_menu
+from analysis.analysisClient import AnalysisApp
+from preprocess.preprocessClient import PreprocessApp
+from utils.utils import main_menu
 
 if __name__ == '__main__':
     appPreprocess = PreprocessApp()

@@ -1,8 +1,8 @@
-from clientApp.utils.utils import getZeepClient, loadJsonFile, FILE_PATH, preprocessingMenu
+from utils.utils import getZeepClient, loadJsonFile, FILE_PATH, preprocessingMenu
 
 
 class PreprocessApp:
-    def __init__(self, url='http://localhost:5000/?wsdl'):
+    def __init__(self, url='http://localhost:8000/?wsdl'):
         self.URL = url
         self.client = getZeepClient(url)
         self.service = self.client.service

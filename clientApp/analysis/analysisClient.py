@@ -1,8 +1,8 @@
-from clientApp.utils.utils import getZeepClient, loadJsonFile, FILE_PATH, analysisMenu
+from utils.utils import getZeepClient, loadJsonFile, FILE_PATH, analysisMenu
 
 
 class AnalysisApp:
-    def __init__(self, url='http://localhost:5001/?wsdl'):
+    def __init__(self, url='http://localhost:8000/?wsdl'):
         self.URL = url
         self.client = getZeepClient(url)
         self.service = self.client.service
